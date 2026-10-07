@@ -1,0 +1,29 @@
+# 扣子智能体 API 说明
+
+## 接口地址
+https://cvmp9dqtsp.coze.site/stream_run
+
+## 认证方式
+Bearer Token
+
+## 请求示例
+curl --location --request POST "https://cvmp9dqtsp.coze.site/stream_run" \
+  --header "Authorization: Bearer pat_e4D39（这里填你的完整token）" \
+  --header "Content-Type: application/json" \
+  --data '{
+      "content": {
+        "query": {
+          "prompt": [
+            {
+              "type": "text",
+              "content": {
+                "text": "你好"
+              }
+            }
+          ]
+        }
+      },
+      "type": "query",
+      "session_id":"vGikSHjiHM-3d-7f49RIa",
+      "project_id": 7693231355639087154
+    }'
