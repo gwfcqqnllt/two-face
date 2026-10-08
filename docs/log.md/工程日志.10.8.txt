@@ -1,0 +1,27 @@
+## 2026-10-08
+
+### 今日目标
+安装 ultralytics
+跑通 YOLO 第一次训练
+
+### 完成情况
+ultralytics 8.4.174 安装成功
+用完整路径 `yolo.exe` 调用（PATH 未配置）
+数据集：COCO128（128 张训练图，128 张验证图）
+模型：yolov8n.pt
+参数：epochs=10, imgsz=640
+结果：mAP50 ≈ 0.74，mAP50-95 ≈ 0.56
+结果保存路径：`yolo/runs/detect/train`
+
+### 遇到的问题
+pip 装 torch 时 Windows 长路径报错 → 修改注册表 LongPathsEnabled=1 解决
+清华源找不到 ultralytics → 换官方源 + default-timeout 解决
+`yolo` 命令未加入 PATH → 改用完整路径调用 `yolo.exe`
+
+### AI 辅助情况
+辅助排查 Windows 长路径报错
+辅助定位 yolo.exe 的安装路径
+
+### 明日计划
+进行 YOLO 实时推理
+截图预测结果
