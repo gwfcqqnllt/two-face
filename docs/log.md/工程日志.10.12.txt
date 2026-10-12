@@ -1,0 +1,22 @@
+## 2026-10-12
+
+### 今日目标
+完成 YOLO 接入 Web 应用
+
+### 完成情况
+成功搭建 Streamlit Web 应用，实现前端上传图片、后端调用 YOLO 推理、前端展示带框结果
+终端成功输出识别结果（cat 0.51, cat 0.69），网页端显示带框图片
+编写README.md，梳理了整体架构与工程取舍
+
+### 遇到的问题
+Windows 系统应用控制策略（WinError 4551）拦截 PyTorch DLL，导致常规 Web 后端无法运行
+解决：改用 subprocess 调用 yolo.exe 命令行方式，成功绕过系统限制
+Streamlit 版本更新导致 `use_column_width` 参数被废弃
+解决：替换为 `use_container_width=True`，黄色警告消除
+预测结果目录自动递增（predict、predict-2...）导致前端获取失败
+解决：通过逻辑调整与刷新重新推理，成功获取最新结果
+
+### AI 辅助情况
+辅助排查 Web 环境报错与 Windows 策略拦截问题
+辅助生成 Streamlit 前端代码框架与降级兜底逻辑
+嘻嘻，问题也都是AI解决的
